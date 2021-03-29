@@ -2,7 +2,7 @@ const heartsContainer = document.querySelector("#hearts-container");
 const controlsContainer = document.querySelector("#controls-container");
 const hitButton = controlsContainer.querySelector("#hit-button");
 const hitDamageInput = controlsContainer.querySelector("#hit-damage-input");
-const healButton = concontrolsContainer.querySelector("#heal-button");
+const healButton = controlsContainer.querySelector("#heal-button");
 const healAmountInput = controlsContainer.querySelector("#heal-amount-input");
 const ahcButton = controlsContainer.querySelector("#add-heart-container-button");
 const overhealButton = controlsContainer.querySelector("#overheal-button");
@@ -31,5 +31,11 @@ function updateHeartsDisplay() {
 hitButton.addEventListener("click", function () {
   let damage = Number(hitDamageInput.value);
   health = Math.max(0, health - damage);
+  updateHeartsDisplay();
+});
+
+healButton.addEventListener("click", function (){
+  let heal = Number(healAmountInput.value);
+  health = Math.max(0, health + heal);
   updateHeartsDisplay();
 });
