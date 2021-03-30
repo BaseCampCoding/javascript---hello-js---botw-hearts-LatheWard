@@ -1,5 +1,6 @@
 const heartsContainer = document.querySelector("#hearts-container");
 const controlsContainer = document.querySelector("#controls-container");
+const heart = document.getElementsByClassName("heart")
 const hitButton = controlsContainer.querySelector("#hit-button");
 const hitDamageInput = controlsContainer.querySelector("#hit-damage-input");
 const healButton = controlsContainer.querySelector("#heal-button");
@@ -39,3 +40,21 @@ healButton.addEventListener("click", function (){
   health = Math.max(0, health + heal);
   updateHeartsDisplay();
 });
+
+ahcButton.addEventListener("click", function (){
+  let newheart = document.createElement("div");
+  newHeart.className = "heart";
+  let cornerOne = document.createElement("div");
+  let cornerTwo = document.createElement("div");
+  let cornerThree = document.createElement("div");
+  let cornerFour = document.createElement("div");
+  
+  cornerOne.className = "top-left";
+  cornerTwo.className = "top-right";
+  cornerThree.className = "bottom-left";
+  cornerFour.className = "bottom-right";
+
+  newHeart.appendChild(cornerOne, cornerTwo, cornerThree, cornerFour);
+  newHeart.setAttribute("data-quarters", "4")
+  heartsContainer.insertBefore(newHeart, heartsContainer)
+})
