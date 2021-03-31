@@ -53,9 +53,9 @@ ahcButton.addEventListener("click", function (){
 })
 
 overhealButton.addEventListener("click", function(){
-  const newHeart = heartsContainer.querySelector(".heart").cloneNode(true);
-  for (let i = overhealAmountInput.value - overhealAmount / 4); i!= 0; i--{
-    
+  const newHeart = document.querySelector(".heart").cloneNode(true)
+  newHeart.className = "heart extra"
+  for (let i = overhealAmountInput.value - overhealAmount / 4; i!= 0; i--){
     heartsContainer.appendChild(newHeart);
   };
   updateHeartsDisplay();
