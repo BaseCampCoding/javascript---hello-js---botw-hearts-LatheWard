@@ -44,7 +44,9 @@ healButton.addEventListener("click", function (){
 ahcButton.addEventListener("click", function (){
   const newHeart = heartsContainer.querySelector(".heart").cloneNode(true);
   heartsContainer.appendChild(newHeart);
-  let allHearts = Number(heartsContainer.childElementCount);
-  health = maxHealth + allHearts
+  maxHealth += 8;
+  if (health !== maxHealth){
+    health += (maxHealth - health);
+  };
   updateHeartsDisplay();
 })
