@@ -42,23 +42,9 @@ healButton.addEventListener("click", function (){
 });
 
 ahcButton.addEventListener("click", function (){
-  // let newheart = document.createElement("div");
-  // newHeart.className = "heart";
-  // let cornerOne = document.createElement("div");
-  // let cornerTwo = document.createElement("div");
-  // let cornerThree = document.createElement("div");
-  // let cornerFour = document.createElement("div");
-  
-  // cornerOne.className = "top-left";
-  // cornerTwo.className = "top-right";
-  // cornerThree.className = "bottom-left";
-  // cornerFour.className = "bottom-right";
-
-  // newHeart.appendChild(cornerOne, cornerTwo, cornerThree, cornerFour);
-  // newHeart.setAttribute("data-quarters", "4")
-  // heartsContainer.insertBefore(newHeart, heartsContainer)
-
-  const newHeart = heartsContainer.querySelector(".heart").cloneNode(true)
-  heartsContainer.appendChild(newHeart)
-  updateHeartsDisplay()
+  const newHeart = heartsContainer.querySelector(".heart").cloneNode(true);
+  heartsContainer.appendChild(newHeart);
+  let fullHealth = Number(heartsContainer.childElementCount)
+  health = Math.max(0, health + fullHealth)
+  updateHeartsDisplay();
 })
