@@ -11,6 +11,7 @@ const overhealAmountInput = controlsContainer.querySelector("#overheal-amount-in
 
 let health = 35;
 let maxHealth = 40;
+let overhealAmount = 0;
 
 function randint(lo, hi) {
   return Math.floor(Math.random() * (hi - lo) + lo);
@@ -52,5 +53,11 @@ ahcButton.addEventListener("click", function (){
 })
 
 overhealButton.addEventListener("click", function(){
-  heartsContainer.appendChild(newHeart);
+  const newHeart = heartsContainer.querySelector(".heart").cloneNode(true);
+  for (let i = overhealAmountInput.value - overhealAmount / 4); i!= 0; i--{
+    
+    heartsContainer.appendChild(newHeart);
+  };
+  updateHeartsDisplay();
+  
 })
