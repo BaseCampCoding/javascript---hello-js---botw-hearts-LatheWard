@@ -50,3 +50,7 @@ ahcButton.addEventListener("click", function (){
   };
   updateHeartsDisplay();
 })
+
+overhealButton.addEventListener("click", function(){
+  heartsContainer.appendChild(newHeart);
+})
