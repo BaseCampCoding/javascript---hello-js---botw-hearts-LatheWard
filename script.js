@@ -58,6 +58,7 @@ const newExtraHeart = document.querySelector(".heart").cloneNode(true)
 newExtraHeart.className = "heart extra"
 
 overhealButton.addEventListener("click", function(){
+  if (newExtraHeart.hasChildNodes == false ){
   for (let i = overhealAmountInput.value - overhealAmount / 4; i!= 0; i--){
     heartsContainer.appendChild(newExtraHeart);
   };
@@ -65,7 +66,7 @@ overhealButton.addEventListener("click", function(){
   if (health !== maxHealth){
     health += (maxHealth - health);
   };
-  updateHeartsDisplay();  
+  updateHeartsDisplay();  }
 
 })
 
