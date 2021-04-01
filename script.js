@@ -34,6 +34,8 @@ hitButton.addEventListener("click", function () {
   let damage = Number(hitDamageInput.value);
   health = Math.max(0, health - damage);
   updateHeartsDisplay();
+
+  heartsContainer.removeChild(newExtraHeart)
 });
 
 healButton.addEventListener("click", function (){
@@ -52,16 +54,18 @@ ahcButton.addEventListener("click", function (){
   updateHeartsDisplay();
 })
 
+const newExtraHeart = document.querySelector(".heart").cloneNode(true)
+newExtraHeart.className = "heart extra"
+
 overhealButton.addEventListener("click", function(){
-  const newHeart = document.querySelector(".heart").cloneNode(true)
-  newHeart.className = "heart extra"
   for (let i = overhealAmountInput.value - overhealAmount / 4; i!= 0; i--){
-    heartsContainer.appendChild(newHeart);
+    heartsContainer.appendChild(newExtraHeart);
   };
-  maxHealth += 8;
+  maxHealth += 4;
   if (health !== maxHealth){
     health += (maxHealth - health);
   };
   updateHeartsDisplay();  
+
 })
 
